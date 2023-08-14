@@ -1,5 +1,5 @@
 /**
- * @file html 解析引擎
+ * @file html 解析
  */
 
 const attribute =
@@ -166,5 +166,3 @@ export const parseHTML = (html: string) => {
     }
     return root
 }
-
-parseHTML("<div> hello yedi</div>")
