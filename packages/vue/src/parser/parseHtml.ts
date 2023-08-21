@@ -34,6 +34,7 @@ export interface TextNode extends ASTNode{
  */
 export const parseHTML: any = (html: string) => {
     const stack: ASTNode[] = [],
+        ELEMENT_TYPE = 1,
         TEXT_TYPE = 3
 
     let currentParent: ASTNode,
@@ -48,7 +49,8 @@ export const parseHTML: any = (html: string) => {
             tag,
             attrs,
             children: [],
-            parent: null
+            parent: null,
+            type: ELEMENT_TYPE
         }
     }
 
@@ -129,6 +131,7 @@ export const parseHTML: any = (html: string) => {
 
     const char = (text: string) => {
         text = text.replace(/\s/g, "");
+        // @ts-ignore
         text &&
         currentParent.children.push({
             type: TEXT_TYPE,

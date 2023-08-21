@@ -1,3 +1,4 @@
-import {parseHTML} from "./src/parser/parseHtml";
+import {compileRenderFunction} from "./src/parser/index";
 
-console.log(parseHTML('<div><span>hello yedi</span></div>'));
+
+compileRenderFunction('<div id="root" style="color: red; margin-top: 20px">{{yedi}} <span>秋天的第一个offer</span>{{leyo}}</div>');
