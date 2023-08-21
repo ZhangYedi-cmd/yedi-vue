@@ -32,7 +32,7 @@ export interface TextNode extends ASTNode{
  * 解析Html
  * @param html
  */
-export const parseHTML = (html: string) => {
+export const parseHTML: any = (html: string) => {
     const stack: ASTNode[] = [],
         TEXT_TYPE = 3
 
